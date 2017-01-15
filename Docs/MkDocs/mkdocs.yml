@@ -1,0 +1,29 @@
+site_name: Gbd.IO.Serial
+site_url: http://ASoftTech.github.io/Gbd.IO.Serial
+repo_url: https://github.com/ASoftTech/Gbd.IO.Serial
+site_description: Gbd.IO.Serial - A C# .Net library for serial port access
+edit_uri: edit/master/Docs/MkDocs/Docs
+
+pages:
+- Home: index.md
+- Libraries:
+    - Gbd.IO.Serial: Gbd.IO.Serial\Overview.md
+#    - Gbd.IO.Serial.Reactive: Appst.IO.Serial.Reactive\Overview.md
+
+
+#theme: cosmo
+theme: cyborg
+#theme: alabaster
+#theme: readthedocs
+#theme: mkdocs
+#theme: material
+
+# Overrides content within the selected theme
+theme_dir: theme
+
+markdown_extensions:
+    - smarty
+
+extra_css:
+    - css/highlight-fix.css
+    - css/highlight-custom.css

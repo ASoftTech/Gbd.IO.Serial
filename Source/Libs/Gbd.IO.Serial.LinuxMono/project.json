@@ -1,0 +1,15 @@
+{
+  "title": "Gbd.IO.Serial.LinuxMono",
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Gbd.IO.Serial": "1.0.0-*",
+    "NETStandard.Library": "1.6.0"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}

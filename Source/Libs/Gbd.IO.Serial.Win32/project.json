@@ -1,0 +1,16 @@
+{
+  "title": "Gbd.IO.Serial.Win32",
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Gbd.IO.Serial": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "net462": {
+    }
+  },
+  "buildOptions": {
+    "allowUnsafe": true
+  }
+}
