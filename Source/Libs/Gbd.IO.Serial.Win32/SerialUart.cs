@@ -27,7 +27,7 @@ namespace Gbd.IO.Serial.Win32 {
 
         /// <summary> Raises the data receive event. </summary>
         /// <param name="e"> Event information to send to registered event handlers. </param>
-        internal protected virtual void OnDataRx(DataRxEventArgs e) {
+        protected internal virtual void OnDataRx(DataRxEventArgs e) {
             DataRx?.Invoke(this, e);
         }
 
@@ -36,7 +36,7 @@ namespace Gbd.IO.Serial.Win32 {
 
         /// <summary> Raises the data error event. </summary>
         /// <param name="e"> Event information to send to registered event handlers. </param>
-        internal protected virtual void OnErrorRx(DataErrorEventArgs e) {
+        protected internal virtual void OnErrorRx(DataErrorEventArgs e) {
             ErrorRx?.Invoke(this, e);
         }
 
@@ -48,11 +48,11 @@ namespace Gbd.IO.Serial.Win32 {
             write_overlap = IntPtr.Zero;
             disposed = false;
 
-            NativeOverlapped writeov = new NativeOverlapped();
+            var writeov = new NativeOverlapped();
             write_overlap = Marshal.AllocHGlobal(Marshal.SizeOf(typeof (NativeOverlapped)));
             Marshal.StructureToPtr(writeov, write_overlap, true);
 
-            NativeOverlapped readov = new NativeOverlapped();
+            var readov = new NativeOverlapped();
             read_overlap = Marshal.AllocHGlobal(Marshal.SizeOf(typeof (NativeOverlapped)));
             Marshal.StructureToPtr(readov, read_overlap, true);
         }
@@ -71,8 +71,7 @@ namespace Gbd.IO.Serial.Win32 {
         }
 
         private bool portopen() {
-            if (_Port == null) return false;
-            return _Port.IsOpen;
+            return _Port != null && _Port.IsOpen;
         }
 
         /// <summary>

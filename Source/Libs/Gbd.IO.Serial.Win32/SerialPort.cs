@@ -58,7 +58,7 @@ namespace Gbd.IO.Serial.Win32 {
 
         /// <summary> Raises the pin changed event. </summary>
         /// <param name="e"> Event information to send to registered event handlers. </param>
-        internal protected virtual void OnPinChanged(PinChangedEventArgs e) {
+        protected internal virtual void OnPinChanged(PinChangedEventArgs e) {
             PinChanged?.Invoke(this, e);
         }
 
@@ -285,6 +285,7 @@ namespace Gbd.IO.Serial.Win32 {
             if (_handle == null || _handle.IsInvalid) return;
             if (IsOpen) Close();
             _Uart.Dispose();
+            disposed = true;
         }
     }
 }

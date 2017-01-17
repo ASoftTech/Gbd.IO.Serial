@@ -32,6 +32,7 @@ The theme directory contains overrides for the bootswatch themes
   * Doxygen link added onto the far right
     (this avoids problems when using serve and linking to doxygen under the pages section)
   * Added edit button in Nav to take advantage of edit_uri / edit_url
+  * Width has been altered for the navbar / wider viewing
 
 ## General Process
 

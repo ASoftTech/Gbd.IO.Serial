@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
   "testRunner": "xunit",
 
@@ -6,7 +6,14 @@
     "NETStandard.Library": "1.6.1",
     "dotnet-test-xunit": "2.2.0-preview2-build1029",
     "xunit": "2.2.0-beta4-build3444",
-    "xunit.runner.visualstudio": "2.2.0-beta4-build1194"
+    "xunit.runner.visualstudio": "2.2.0-beta4-build1194",
+    "Gbd.IO.Serial": "1.0.0-*",
+    "Gbd.IO.Serial.Win32": "1.0.0-*",
+    "Serilog": "2.3.0",
+    "Serilog.Sinks.ColoredConsole": "2.0.0",
+    "Serilog.Sinks.Literate": "2.0.0",
+    "System.Reactive": "3.1.1",
+    "Serilog.Sinks.Observable": "2.0.1"
   },
 
   "frameworks": {

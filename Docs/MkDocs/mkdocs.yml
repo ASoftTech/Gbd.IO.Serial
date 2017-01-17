@@ -6,10 +6,8 @@ edit_uri: edit/master/Docs/MkDocs/Docs
 
 pages:
 - Home: index.md
-- Libraries:
-    - Gbd.IO.Serial: Gbd.IO.Serial\Overview.md
-#    - Gbd.IO.Serial.Reactive: Appst.IO.Serial.Reactive\Overview.md
-
+- API:
+    - Connection: API\Connection.md
 
 #theme: cosmo
 theme: cyborg
@@ -27,3 +25,4 @@ markdown_extensions:
 extra_css:
     - css/highlight-fix.css
     - css/highlight-custom.css
+    - css/navbarfix.css
