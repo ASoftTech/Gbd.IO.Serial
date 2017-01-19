@@ -1,33 +1,4 @@
-# Connection
-
-The first step in getting a connection to the serial port is to get the SerialController instance. <br>
-The SerialController is a single instance class and allows us to
-
-  * Obtain a list of all available serial ports names
-  * Obtain a serial port class for the given name
-  * Obtain a enumerable list of all serial ports as a list of class's
-
-## Platform
-
-Since we have different SerialController's for different platforms such as Windows and Linux <br>
-The best way to get the correct controller for a given platform is to use the Platform class
-
-
-```cs
-var controller = Platform.GetController();
-```
-
-
-  * In the case of windows the SerialController class instance from the //Gbd.IO.Serial.Win32// library will be returned.
-  * In the case of linux the SerialController class instance from the //Gbd.IO.Serial.LinuxMono// library will be returned.
-
-## Serial Controller
-
-Once we have the controller we can then use this to obtain a list of all available Serial Ports <br>
-This is an example of a few different methods of getting the serialport instance
-
-```cs
-using System;
+﻿using System;
 using System.Linq;
 using Gbd.IO.Serial;
 
@@ -63,5 +34,3 @@ namespace ExampleCoreApp1.Examples {
         }
     }
 }
-```
-

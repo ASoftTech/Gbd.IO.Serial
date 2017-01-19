@@ -1,3 +1,13 @@
+#:D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial.Win32\Gbd.IO.Serial.Win32.xproj
+D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial.Win32\Gbd.IO.Serial.Win32.xproj|D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial\Gbd.IO.Serial.xproj
+#:D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Examples\ExampleCoreApp1\ExampleCoreApp1.xproj
+D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Examples\ExampleCoreApp1\ExampleCoreApp1.xproj|D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial\Gbd.IO.Serial.xproj
+D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Examples\ExampleCoreApp1\ExampleCoreApp1.xproj|D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial.LinuxMono\Gbd.IO.Serial.LinuxMono.xproj
+D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Examples\ExampleCoreApp1\ExampleCoreApp1.xproj|D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial.Reactive\Gbd.IO.Serial.Reactive.xproj
+D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Examples\ExampleCoreApp1\ExampleCoreApp1.xproj|D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial.Win32\Gbd.IO.Serial.Win32.xproj
+D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial.LinuxMono\Gbd.IO.Serial.LinuxMono.xproj|D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial\Gbd.IO.Serial.xproj
+D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial.Reactive\Gbd.IO.Serial.Reactive.xproj|D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial\Gbd.IO.Serial.xproj
+D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial.Win32\Gbd.IO.Serial.Win32.xproj|D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial\Gbd.IO.Serial.xproj
 #:D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Tests\Gbd.IO.Serial.Win32.Tests\Gbd.IO.Serial.Win32.Tests.xproj
 D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Tests\Gbd.IO.Serial.Win32.Tests\Gbd.IO.Serial.Win32.Tests.xproj|D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial\Gbd.IO.Serial.xproj
 D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Tests\Gbd.IO.Serial.Win32.Tests\Gbd.IO.Serial.Win32.Tests.xproj|D:\SourceControl\GitRepos.Appst\Gbd.IO.Serial\Source\Libs\Gbd.IO.Serial.Win32\Gbd.IO.Serial.Win32.xproj

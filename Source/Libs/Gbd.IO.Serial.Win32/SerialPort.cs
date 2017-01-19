@@ -5,6 +5,7 @@ using Gbd.IO.Serial.Win32.native;
 using Gbd.IO.Serial.Win32.Settings;
 using Microsoft.Win32.SafeHandles;
 using System;
+using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -16,6 +17,8 @@ using System.Threading;
 
 namespace Gbd.IO.Serial.Win32 {
     /// <summary> Windows implementation of a serial port. </summary>
+    // ReSharper disable once UseNameofExpression
+    [DebuggerDisplay("SerialPort = {Name}")]
     public class SerialPort : ISerialPort {
         /// <summary> Text string name of the serial port. </summary>
         public string Name => _Name;
@@ -44,9 +47,9 @@ namespace Gbd.IO.Serial.Win32 {
         protected internal SerialBufferSettings _BufferSettings;
 
         /// <summary> The serial properties. </summary>
-        public ISerialProperties SerialProperties => _SerialProperties;
+        public ISerialInfo SerialInfo => _SerialInfo;
 
-        protected internal SerialProperties _SerialProperties;
+        protected internal SerialInfo _SerialInfo;
 
         /// <summary> Serial Port buffer settings. </summary>
         public ISerialUart Uart => _Uart;
@@ -91,7 +94,7 @@ namespace Gbd.IO.Serial.Win32 {
             _SerialSettings = new SerialSettings(this);
             _PinStates = new SerialPinStates(this);
             _BufferSettings = new SerialBufferSettings(this);
-            _SerialProperties = new SerialProperties(this);
+            _SerialInfo = new SerialInfo(this);
             _Uart = new SerialUart(this);
             serialeventhandler = new SerialEventHandler(this);
 

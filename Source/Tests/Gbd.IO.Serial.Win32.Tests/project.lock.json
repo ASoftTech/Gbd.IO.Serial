@@ -1116,6 +1116,9 @@
         "dependencies": {
           "Gbd.IO.Serial": "1.0.0"
         },
+        "frameworkAssemblies": [
+          "System.Management"
+        ],
         "compile": {
           "net461/Gbd.IO.Serial.Win32.dll": {}
         },

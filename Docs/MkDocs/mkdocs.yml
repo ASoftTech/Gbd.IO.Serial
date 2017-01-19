@@ -8,6 +8,10 @@ pages:
 - Home: index.md
 - API:
     - Connection: API\Connection.md
+    - Serial Port: API\SerialPort.md
+- Notes:
+    - Links: Notes\Links.md
+    - Todo: Notes\Todo.md
 
 #theme: cosmo
 theme: cyborg

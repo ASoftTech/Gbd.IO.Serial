@@ -3335,7 +3335,9 @@
     "": [
       "Gbd.IO.Serial >= 1.0.0-*"
     ],
-    ".NETFramework,Version=v4.6.1": []
+    ".NETFramework,Version=v4.6.1": [
+      "System.Management >= 4.0.0"
+    ]
   },
   "tools": {},
   "projectFileToolGroups": {}

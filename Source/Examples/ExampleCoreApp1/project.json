@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "Gbd.IO.Serial": "1.0.0-*",
+    "Gbd.IO.Serial.Reactive": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "net461": {
+      "dependencies": {
+        "Gbd.IO.Serial.Win32": "1.0.0-*"
+      }
+    },
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Gbd.IO.Serial.LinuxMono": "1.0.0-*",
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.1"
+        }
+      }
+    }
+  }
+}

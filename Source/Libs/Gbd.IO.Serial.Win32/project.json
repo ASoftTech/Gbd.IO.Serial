@@ -7,7 +7,11 @@
   },
 
   "frameworks": {
-    "net461": {}
+    "net461": {
+      "frameworkAssemblies": {
+        "System.Management": "4.0.0.0"
+      }
+    }
   },
   "buildOptions": {
     "allowUnsafe": true

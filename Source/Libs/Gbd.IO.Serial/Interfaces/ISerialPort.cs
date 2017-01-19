@@ -19,7 +19,7 @@ namespace Gbd.IO.Serial.Interfaces {
         ISerialBufferSettings BufferSettings { get; }
 
         /// <summary> Serial Port properties. </summary>
-        ISerialProperties SerialProperties { get; }
+        ISerialInfo SerialInfo { get; }
 
         /// <summary> Serial Port Uart. </summary>
         ISerialUart Uart { get; }

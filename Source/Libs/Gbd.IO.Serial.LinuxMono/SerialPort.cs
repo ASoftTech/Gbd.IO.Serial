@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using Gbd.IO.Serial.Error;
 using Gbd.IO.Serial.Event;
@@ -10,6 +11,9 @@ using Gbd.IO.Serial.LinuxMono.Settings;
 // Event Handling
 
 namespace Gbd.IO.Serial.LinuxMono {
+    /// <summary> Linux Mono implementation of a serial port. </summary>
+    // ReSharper disable once UseNameofExpression
+    [DebuggerDisplay("SerialPort = {Name}")]
     public class SerialPort : ISerialPort {
         /// <summary> Text string name of the serial port. </summary>
         public string Name => _Name;
@@ -38,7 +42,9 @@ namespace Gbd.IO.Serial.LinuxMono {
         protected internal SerialBufferSettings _BufferSettings;
 
         /// <summary> The Serial Port Properties. </summary>
-        public ISerialProperties SerialProperties => null; //TODO Not supported via Mono
+        public ISerialInfo SerialInfo => _SerialInfo;
+
+        protected internal SerialInfo _SerialInfo;
 
         /// <summary> Serial Port buffer settings. </summary>
         public ISerialUart Uart => _Uart;
@@ -50,7 +56,7 @@ namespace Gbd.IO.Serial.LinuxMono {
 
         /// <summary> Raises the pin changed event. </summary>
         /// <param name="e"> Event information to send to registered event handlers. </param>
-        internal protected virtual void OnPinChanged(PinChangedEventArgs e) {
+        protected internal virtual void OnPinChanged(PinChangedEventArgs e) {
             PinChanged?.Invoke(this, e);
         }
 
@@ -76,6 +82,7 @@ namespace Gbd.IO.Serial.LinuxMono {
             _SerialSettings = new SerialSettings(this);
             _PinStates = new SerialPinStates(this);
             _BufferSettings = new SerialBufferSettings(this);
+            _SerialInfo = new SerialInfo(this);
             _Uart = new SerialUart(this);
 
             // Unmanaged Structures and Access
@@ -177,6 +184,7 @@ namespace Gbd.IO.Serial.LinuxMono {
             if (disposed) return;
             if (IsOpen) Close();
             _Uart.Dispose();
+            disposed = true;
         }
 
     }
