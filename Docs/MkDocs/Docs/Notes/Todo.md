@@ -25,6 +25,17 @@
 
   * Code up Examples, maybe using GtkSharp and ASP .Net Core Console / Web apps
 
+## Logging
+
+  * It looks like there's a currently an issue when using ITestOutputHelper when outputing logging from XUnit with core.
+    this seems to be more of a tooling issue with core instead of a XUnit issue
+    https://github.com/xunit/xunit/issues/608
+
+  * Issue with contentfiles and nuget / core projects
+    https://github.com/NuGet/Home/issues/2262
+    http://stackoverflow.com/questions/40469058/nuget-content-files-in-net-core-solution-not-getting-copied-when-installing-thr
+    Eventually switch across to liblog once we can include it via Nuget, for now just use Serilog directly
+
 ## Documentation
 
   * Finish up Docs

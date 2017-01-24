@@ -1,21 +1,20 @@
-﻿
-namespace Gbd.IO.Serial.Win32.Tests.Log
-{
-    using System;
-    using System.IO;
-    using System.Reactive.Linq;
-    using System.Reactive.Subjects;
-    using Serilog;
-    using Serilog.Context;
-    using Serilog.Events;
-    using Serilog.Formatting.Display;
-    using Xunit.Abstractions;
+﻿using System;
+using System.IO;
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
+using Serilog;
+using Serilog.Context;
+using Serilog.Events;
+using Serilog.Formatting.Display;
+using Xunit.Abstractions;
 
+namespace Gbd.IO.Serial.Win32.Tests.Base {
     internal static class LoggingHelper {
         private static readonly Subject<LogEvent> s_logEventSubject = new Subject<LogEvent>();
         private const string CaptureCorrelationIdKey = "CaptureCorrelationId";
+
         private static readonly MessageTemplateTextFormatter s_formatter = new MessageTemplateTextFormatter(
-                "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message}{NewLine}{Exception}", null);
+            "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message}{NewLine}{Exception}", null);
 
         static LoggingHelper() {
             Log.Logger = new LoggerConfiguration()

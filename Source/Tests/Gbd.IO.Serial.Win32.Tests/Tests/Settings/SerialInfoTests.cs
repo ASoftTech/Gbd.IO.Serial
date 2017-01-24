@@ -1,9 +1,17 @@
 ﻿using System;
 using System.Linq;
+using Gbd.IO.Serial.Win32.Tests.Base;
+using Gbd.IO.Serial.Win32.Tests.Logging;
 using Xunit;
+using Xunit.Abstractions;
 
-namespace Gbd.IO.Serial.Win32.Tests.Settings {
-    public class SerialInfoTests {
+namespace Gbd.IO.Serial.Win32.Tests.Tests.Settings {
+    public class SerialInfoTests : BaseTest {
+        /// <summary> Constructor. </summary>
+        /// <param name="outputHelper"> The output helper used by XUnit. </param>
+        public SerialInfoTests(ITestOutputHelper outputHelper) : base(outputHelper) {}
+
+
         [Fact]
         public void Read() {
             // Get the Serial Port Controller based on the platform
@@ -16,9 +24,11 @@ namespace Gbd.IO.Serial.Win32.Tests.Settings {
             sport1.Open();
             sport1.SerialInfo.Read();
             if (sport1.SerialInfo != null) {
+                var props = "Serial Properties: " + sport1.Name + "\n";
                 foreach (var item in sport1.SerialInfo.Props) {
-                    Console.WriteLine(item.Key + " : " + item.Value);
+                    props += item.Key + " : " + item.Value + "\n";
                 }
+                Logger.Info(props);
             }
             sport1.Close();
         }

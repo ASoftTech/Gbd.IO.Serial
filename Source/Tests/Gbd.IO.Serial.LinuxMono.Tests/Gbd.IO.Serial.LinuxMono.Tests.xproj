@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>2ca7f5df-f1ee-45a3-8440-57dfb518673a</ProjectGuid>
+    <ProjectGuid>ecf27220-bd2b-4b46-aa44-2644ae244ae1</ProjectGuid>
     <RootNamespace>Gbd.IO.Serial.LinuxMono.Tests</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>

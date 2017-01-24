@@ -159,7 +159,7 @@ $RECYCLE.BIN/
 .DS_Store
 
 # Ignore deps directory
-/deps/
+/packages/
 
 # .Net core related files
 /artifacts/

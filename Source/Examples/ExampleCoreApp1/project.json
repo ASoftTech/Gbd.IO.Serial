@@ -6,7 +6,7 @@
 
   "dependencies": {
     "Gbd.IO.Serial": "1.0.0-*",
-    "Gbd.IO.Serial.Reactive": "1.0.0-*"
+    "Gbd.IO.Serial.Reactive": "1.0.0-*",
   },
 
   "frameworks": {
