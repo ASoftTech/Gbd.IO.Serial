@@ -102,7 +102,7 @@
     <Compile Include="Tests\PlatformTests.cs" />
     <Compile Include="Tests\SerialControllerTests.cs" />
     <Compile Include="Tests\Settings\SerialInfoTests.cs" />
-    <Compile Include="Tests\Settings\SerialPinStates.cs" />
+    <Compile Include="Tests\Settings\SerialPinStatesTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

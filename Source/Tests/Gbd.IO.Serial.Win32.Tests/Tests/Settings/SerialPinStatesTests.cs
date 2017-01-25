@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Linq;
 using Gbd.IO.Serial.Interfaces;
+using Gbd.IO.Serial.Win32.Settings;
 using Gbd.IO.Serial.Win32.Tests.Base;
 using Gbd.IO.Serial.Win32.Tests.Logging;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace Gbd.IO.Serial.Win32.Tests.Tests.Settings {
-    public class SerialPinStates : BaseTest {
+    public class SerialPinStatesTests : BaseTest {
         /// <summary> Constructor. </summary>
         /// <param name="outputHelper"> The output helper used by XUnit. </param>
-        public SerialPinStates(ITestOutputHelper outputHelper) : base(outputHelper) {}
+        public SerialPinStatesTests(ITestOutputHelper outputHelper) : base(outputHelper) {}
 
         /// <summary> Read the Pin States from the port </summary>
         [Fact]
@@ -36,6 +37,7 @@ namespace Gbd.IO.Serial.Win32.Tests.Tests.Settings {
             port.Close();
         }
 
+        /// <summary> Writes pin states </summary>
         [Fact]
         public void Write() {
             // Assume we have a Null Model cable with two serial ports connected
@@ -77,6 +79,53 @@ namespace Gbd.IO.Serial.Win32.Tests.Tests.Settings {
                 Assert.False(sport2.PinStates.CTS_Detect);
                 Assert.False(sport2.PinStates.DSR_Detect);
             }
+        }
+
+        /// <summary> Sets pin states to default values. </summary>
+        [Fact]
+        public void SetDefaults() {
+            // Get the Serial Port Controller based on the platform
+            var controller = Platform.GetController();
+            // Get the first serial port name in the list
+            var port = controller.GetPorts().FirstOrDefault();
+            if (port == null) throw new ArgumentException("No Serial Device Found");
+            Assert.NotNull(port.PinStates);
+            port.Open();
+            port.PinStates.Read();
+            port.PinStates.SetDefaults();
+            port.PinStates.Write();
+            port.Close();
+        }
+
+        /// <summary> Import states from a copy. </summary>
+        public void Import() {
+            // Get the Serial Port Controller based on the platform
+            var controller = Platform.GetController();
+            // Get the first serial port name in the list
+            var port = controller.GetPorts().FirstOrDefault();
+            if (port == null) throw new ArgumentException("No Serial Device Found");
+            Assert.NotNull(port.PinStates);
+            port.Open();
+            port.PinStates.Read();
+            var newstates = new SerialPinStates {Rts_Enable = true};
+            port.PinStates.Import(newstates);
+            port.PinStates.Write();
+            port.Close();
+        }
+
+        /// <summary> Create copy of pinstates. </summary>
+        public void Copy() {
+            // Get the Serial Port Controller based on the platform
+            var controller = Platform.GetController();
+            // Get the first serial port name in the list
+            var port = controller.GetPorts().FirstOrDefault();
+            if (port == null) throw new ArgumentException("No Serial Device Found");
+            Assert.NotNull(port.PinStates);
+            port.Open();
+            port.PinStates.Read();
+            var copyitem = port.PinStates.Copy();
+            Assert.IsType<SerialPinStates>(copyitem);
+            port.Close();
         }
     }
 }
