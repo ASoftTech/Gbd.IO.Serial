@@ -5,12 +5,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management;
+using Gbd.IO.Serial.Win32.Logging;
 
 // https://msdn.microsoft.com/en-us/library/windows/desktop/aa363189(v=vs.85).aspx
 
 namespace Gbd.IO.Serial.Win32.Settings {
     /// <summary> Information about the serial port. </summary>
     public class SerialInfo : ISerialInfo {
+
+        /// <summary> The library logger. </summary>
+        private static readonly ILog LibLogger = LogProvider.GetCurrentClassLogger();
+
         /// <summary> Serial Port properties. </summary>
         public Dictionary<string, string> Props => _Props;
 
@@ -40,6 +45,8 @@ namespace Gbd.IO.Serial.Win32.Settings {
 
         /// <summary> Read details about the serial port using a ManagementObject </summary>
         public void ReadMO() {
+            LibLogger.Debug(@"Reading properties from Win32_PnPEntity root\CIMV2");
+
             var searcher = new ManagementObjectSearcher(@"root\CIMV2",
                 "SELECT * FROM Win32_PnPEntity WHERE ConfigManagerErrorCode = 0");
 
@@ -61,6 +68,7 @@ namespace Gbd.IO.Serial.Win32.Settings {
 
         /// <summary> Read details about the serial port using the ComProps API. </summary>
         public void ReadComProps() {
+            LibLogger.Debug(@"Reading from the Comprops API");
             CheckPort();
             _Port.comprops.Read();
             _TxQueue_Max = _Port.comprops._commprops.dwMaxTxQueue;

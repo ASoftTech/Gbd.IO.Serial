@@ -11,7 +11,7 @@ namespace Gbd.IO.Serial.Win32.Tests.Tests.Settings {
         /// <param name="outputHelper"> The output helper used by XUnit. </param>
         public SerialInfoTests(ITestOutputHelper outputHelper) : base(outputHelper) {}
 
-
+        /// <summary> Reads meta information about the serial port. </summary>
         [Fact]
         public void Read() {
             // Get the Serial Port Controller based on the platform
