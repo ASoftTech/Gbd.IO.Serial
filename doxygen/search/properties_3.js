@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['databits',['DataBits',['../class_gbd_1_1_i_o_1_1_serial_1_1_base_1_1_serial_settings_base.html#a93947fb59755298fbf74b05e564a49d1',1,'Gbd.IO.Serial.Base.SerialSettingsBase.DataBits()'],['../interface_gbd_1_1_i_o_1_1_serial_1_1_interfaces_1_1_i_serial_settings.html#aa5eda8e8dc7cd3f5567751915d6ee9a8',1,'Gbd.IO.Serial.Interfaces.ISerialSettings.DataBits()']]],
+  ['discardnull',['DiscardNull',['../class_gbd_1_1_i_o_1_1_serial_1_1_base_1_1_serial_buffer_settings_base.html#a9c9a621f61d265f28f240fee329735a5',1,'Gbd.IO.Serial.Base.SerialBufferSettingsBase.DiscardNull()'],['../interface_gbd_1_1_i_o_1_1_serial_1_1_interfaces_1_1_i_serial_buffer_settings.html#a06fe0988898703a1b3d535c17cef0cae',1,'Gbd.IO.Serial.Interfaces.ISerialBufferSettings.DiscardNull()'],['../class_gbd_1_1_i_o_1_1_serial_1_1_linux_mono_1_1_settings_1_1_serial_buffer_settings.html#a0a6f188f5d24f2cf011860cb13f88b79',1,'Gbd.IO.Serial.LinuxMono.Settings.SerialBufferSettings.DiscardNull()']]],
+  ['dsr_5fdetect',['DSR_Detect',['../interface_gbd_1_1_i_o_1_1_serial_1_1_interfaces_1_1_i_serial_pin_states.html#aa2c8b408c95de4ec14f757fa34f0a0ec',1,'Gbd::IO::Serial::Interfaces::ISerialPinStates']]],
+  ['dtr_5fenable',['Dtr_Enable',['../class_gbd_1_1_i_o_1_1_serial_1_1_base_1_1_serial_pin_states_base.html#a6bb138a57a8a292386f3083f2003af4e',1,'Gbd.IO.Serial.Base.SerialPinStatesBase.Dtr_Enable()'],['../interface_gbd_1_1_i_o_1_1_serial_1_1_interfaces_1_1_i_serial_pin_states.html#a76d978d0261a301b4bc852e619a48114',1,'Gbd.IO.Serial.Interfaces.ISerialPinStates.Dtr_Enable()']]]
+];

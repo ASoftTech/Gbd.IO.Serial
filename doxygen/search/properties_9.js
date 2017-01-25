@@ -1,0 +1,13 @@
+var searchData=
+[
+  ['parity',['Parity',['../class_gbd_1_1_i_o_1_1_serial_1_1_base_1_1_serial_settings_base.html#adec7b64b6b6fa1b3bbbbf80db478733d',1,'Gbd.IO.Serial.Base.SerialSettingsBase.Parity()'],['../interface_gbd_1_1_i_o_1_1_serial_1_1_interfaces_1_1_i_serial_settings.html#ade13b81c6ce87e8d76d42dc089d435bb',1,'Gbd.IO.Serial.Interfaces.ISerialSettings.Parity()']]],
+  ['parityreplace',['ParityReplace',['../class_gbd_1_1_i_o_1_1_serial_1_1_base_1_1_serial_buffer_settings_base.html#a45e765cdf107769e2fbff919d0fcdeb1',1,'Gbd.IO.Serial.Base.SerialBufferSettingsBase.ParityReplace()'],['../interface_gbd_1_1_i_o_1_1_serial_1_1_interfaces_1_1_i_serial_buffer_settings.html#a5f691a262202072096ea6405001bfedf',1,'Gbd.IO.Serial.Interfaces.ISerialBufferSettings.ParityReplace()'],['../class_gbd_1_1_i_o_1_1_serial_1_1_linux_mono_1_1_settings_1_1_serial_buffer_settings.html#ae0ade8857ed996b237db5dc24941af0a',1,'Gbd.IO.Serial.LinuxMono.Settings.SerialBufferSettings.ParityReplace()']]],
+  ['parityreplace_5fenable',['ParityReplace_Enable',['../class_gbd_1_1_i_o_1_1_serial_1_1_base_1_1_serial_buffer_settings_base.html#a96a7e8cb9088b533bff18fbd74564e2e',1,'Gbd.IO.Serial.Base.SerialBufferSettingsBase.ParityReplace_Enable()'],['../interface_gbd_1_1_i_o_1_1_serial_1_1_interfaces_1_1_i_serial_buffer_settings.html#aa3dedc5b908f862d69fe6358a84672e2',1,'Gbd.IO.Serial.Interfaces.ISerialBufferSettings.ParityReplace_Enable()']]],
+  ['pinstates',['PinStates',['../interface_gbd_1_1_i_o_1_1_serial_1_1_interfaces_1_1_i_serial_port.html#a59cd5463b24a03b6a8d752e34fa9f562',1,'Gbd::IO::Serial::Interfaces::ISerialPort']]],
+  ['port_5falready_5fopen',['Port_already_open',['../class_gbd_1_1_i_o_1_1_serial_1_1_error_1_1_error_strings.html#a057af43233ad651c7c9883634f855894',1,'Gbd::IO::Serial::Error::ErrorStrings']]],
+  ['port_5fdisposed',['Port_disposed',['../class_gbd_1_1_i_o_1_1_serial_1_1_error_1_1_error_strings.html#a967ce95a789a7245a1019e6768c3cede',1,'Gbd::IO::Serial::Error::ErrorStrings']]],
+  ['port_5fnot_5fopen',['Port_not_open',['../class_gbd_1_1_i_o_1_1_serial_1_1_error_1_1_error_strings.html#abdb919adfed7ed11cc4245da4c5893f4',1,'Gbd::IO::Serial::Error::ErrorStrings']]],
+  ['port_5funlisted',['Port_unlisted',['../class_gbd_1_1_i_o_1_1_serial_1_1_error_1_1_error_strings.html#a5b934bab8a9cd574fa728c98959c9d8c',1,'Gbd::IO::Serial::Error::ErrorStrings']]],
+  ['portnameempty_5fstring',['PortNameEmpty_String',['../class_gbd_1_1_i_o_1_1_serial_1_1_error_1_1_error_strings.html#a62e1dd88a450c5b8fe9b981f6dafab7d',1,'Gbd::IO::Serial::Error::ErrorStrings']]],
+  ['props',['Props',['../interface_gbd_1_1_i_o_1_1_serial_1_1_interfaces_1_1_i_serial_info.html#aafe6d2509614ec0a4efb81129af5e8c2',1,'Gbd::IO::Serial::Interfaces::ISerialInfo']]]
+];

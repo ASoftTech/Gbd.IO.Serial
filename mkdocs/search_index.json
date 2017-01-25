@@ -1,0 +1,114 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Gbd.IO.Serial\n\n\nOvervew\n\n\nThis is a series of Input / Output libraries that can be used under .Net for serial port access\n\n\nMicrosoft recently released part of the code for the .Net library under a MIT licence.\nI had a couple of different reasons for writing this\n\n\n\n\nCurrently there\ns no support for the serial port using the .Net Core framework\n\n\nThe original serial port implementation within .Net was a bit buggy when it cames to events\n\n\nThe original serial port API lacked a object orientated layout\n\n\n\n\nThere were also a few features I wanted to include in a new re-write\n\n\n\n\n\n\nThe serial port code here uses interfaces so that other implementations can be used / written\n    One example is a proxy connection via a device known as the Buspirate where you talk to the device via a serial port and then use that connection\n    to relay serial port data of the device via another Uart.\n\n\n\n\n\n\nThere will be an addon library with extension functions that will allow the use of \nReactive extensions\n.\n    This way we can stream recieved data back via the Rx model.\n\n\n\n\n\n\nThe serial port code will have support for IObservable for binding to controls such as settings.\n\n\n\n\n\n\nLibraries\n\n\n\n\nGbd.IO.Serial\n - Base class\ns for the serial port\n\n\nGbd.IO.Serial.Win32\n - Windows implementation of the serial port using Pinvoke\n\n\nGbd.IO.Serial.LinuxMono\n - Linux implementation of the serial port using the C Mono library wrapper\n\n\nGbd.IO.Serial.Reactive\n - Reactive extensions for the sending / receiving of data.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#gbdioserial", 
+            "text": "", 
+            "title": "Gbd.IO.Serial"
+        }, 
+        {
+            "location": "/#overvew", 
+            "text": "This is a series of Input / Output libraries that can be used under .Net for serial port access  Microsoft recently released part of the code for the .Net library under a MIT licence.\nI had a couple of different reasons for writing this   Currently there s no support for the serial port using the .Net Core framework  The original serial port implementation within .Net was a bit buggy when it cames to events  The original serial port API lacked a object orientated layout   There were also a few features I wanted to include in a new re-write    The serial port code here uses interfaces so that other implementations can be used / written\n    One example is a proxy connection via a device known as the Buspirate where you talk to the device via a serial port and then use that connection\n    to relay serial port data of the device via another Uart.    There will be an addon library with extension functions that will allow the use of  Reactive extensions .\n    This way we can stream recieved data back via the Rx model.    The serial port code will have support for IObservable for binding to controls such as settings.", 
+            "title": "Overvew"
+        }, 
+        {
+            "location": "/#libraries", 
+            "text": "Gbd.IO.Serial  - Base class s for the serial port  Gbd.IO.Serial.Win32  - Windows implementation of the serial port using Pinvoke  Gbd.IO.Serial.LinuxMono  - Linux implementation of the serial port using the C Mono library wrapper  Gbd.IO.Serial.Reactive  - Reactive extensions for the sending / receiving of data.", 
+            "title": "Libraries"
+        }, 
+        {
+            "location": "/API/Connection/", 
+            "text": "Connection\n\n\nThe first step in getting a connection to the serial port is to get the SerialController instance. \n\nThe SerialController is a single instance class and allows us to\n\n\n\n\nObtain a list of all available serial ports names\n\n\nObtain a serial port class for the given name\n\n\nObtain a enumerable list of all serial ports as a list of class\ns\n\n\n\n\nPlatform\n\n\nSince we have different SerialController\ns for different platforms such as Windows and Linux \n\nThe best way to get the correct controller for a given platform is to use the Platform class\n\n\nvar controller = Platform.GetController();\n\n\n\n\n\n\nIn the case of windows the SerialController class instance from the //Gbd.IO.Serial.Win32// library will be returned.\n\n\nIn the case of linux the SerialController class instance from the //Gbd.IO.Serial.LinuxMono// library will be returned.\n\n\n\n\nSerial Controller\n\n\nOnce we have the controller we can then use this to obtain a list of all available Serial Ports \n\nThis is an example of a few different methods of getting the serialport instance\n\n\nusing System;\nusing System.Linq;\nusing Gbd.IO.Serial;\n\nnamespace ExampleCoreApp1.Examples {\n    /// \nsummary\n An example of getting a connection and serial port. \n/summary\n\n    public class Connection {\n        public static void Run() {\n            // Get the Serial Port Controller based on the platform\n            var controller = Platform.GetController();\n\n            // Show a list of all serial port names\n            var portnames = controller.GetPortNames();\n            foreach (var item in portnames) {\n                Console.WriteLine(item);\n            }\n\n            // Get a Serial Port based on the name\n            // Note this does not check if the serial port exists\n            var sport1 = controller.GetPort(\nCOM10\n);\n\n            // Get the first serial port in the list of names\n            if (portnames.Count \n 0) {\n                var sport2 = controller.GetPort(portnames.First());\n            }\n\n            // Get a List of Serial Port Class's\n            var portlist = controller.GetPorts();\n\n            // Use Linq to select a port\n            var sport3 = (from port in controller.GetPorts()\n                where port.Name == \nCOM10\n\n                select port).FirstOrDefault();\n        }\n    }\n}", 
+            "title": "Connection"
+        }, 
+        {
+            "location": "/API/Connection/#connection", 
+            "text": "The first step in getting a connection to the serial port is to get the SerialController instance.  \nThe SerialController is a single instance class and allows us to   Obtain a list of all available serial ports names  Obtain a serial port class for the given name  Obtain a enumerable list of all serial ports as a list of class s", 
+            "title": "Connection"
+        }, 
+        {
+            "location": "/API/Connection/#platform", 
+            "text": "Since we have different SerialController s for different platforms such as Windows and Linux  \nThe best way to get the correct controller for a given platform is to use the Platform class  var controller = Platform.GetController();   In the case of windows the SerialController class instance from the //Gbd.IO.Serial.Win32// library will be returned.  In the case of linux the SerialController class instance from the //Gbd.IO.Serial.LinuxMono// library will be returned.", 
+            "title": "Platform"
+        }, 
+        {
+            "location": "/API/Connection/#serial-controller", 
+            "text": "Once we have the controller we can then use this to obtain a list of all available Serial Ports  \nThis is an example of a few different methods of getting the serialport instance  using System;\nusing System.Linq;\nusing Gbd.IO.Serial;\n\nnamespace ExampleCoreApp1.Examples {\n    ///  summary  An example of getting a connection and serial port.  /summary \n    public class Connection {\n        public static void Run() {\n            // Get the Serial Port Controller based on the platform\n            var controller = Platform.GetController();\n\n            // Show a list of all serial port names\n            var portnames = controller.GetPortNames();\n            foreach (var item in portnames) {\n                Console.WriteLine(item);\n            }\n\n            // Get a Serial Port based on the name\n            // Note this does not check if the serial port exists\n            var sport1 = controller.GetPort( COM10 );\n\n            // Get the first serial port in the list of names\n            if (portnames.Count   0) {\n                var sport2 = controller.GetPort(portnames.First());\n            }\n\n            // Get a List of Serial Port Class's\n            var portlist = controller.GetPorts();\n\n            // Use Linq to select a port\n            var sport3 = (from port in controller.GetPorts()\n                where port.Name ==  COM10 \n                select port).FirstOrDefault();\n        }\n    }\n}", 
+            "title": "Serial Controller"
+        }, 
+        {
+            "location": "/API/SerialPort/", 
+            "text": "Serial Port\n\n\nThe SerialPort class is typically a representation of a single Serial Port, obtained via the SerialController.\n\n\nThere\ns a number of different properties\n\n\n\n\n\n\n\n\nProperty\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nName\n\n\nThis describes the name of the serial port, under Windows this will be usually be something like COM1 or COM5\n\n\n\n\n\n\nIsOpen\n\n\nThis is a boolean value that indicates if the serial port has been opened\n\n\n\n\n\n\nSerialSettings\n\n\nThis allows read / write access to the port configuration such as Baud rate, Handshaking etc\n\n\n\n\n\n\nPinStates\n\n\nThis allows read / write access to pins such as CD, CTS, DSR, DTR, RTS etc\n\n\n\n\n\n\nBufferSettings\n\n\nThis property represents the settings for the Buffer, this includes the Read / Write Buffer sizes, parity replace byte etc\n\n\n\n\n\n\nSerialProperties\n\n\nThis reads associated properties of the Serial Port such as max baud rate etc\n\n\n\n\n\n\nUart\n\n\nThis property contains methods for reading and writing to the port, as well as flushing the buffers", 
+            "title": "Serial Port"
+        }, 
+        {
+            "location": "/API/SerialPort/#serial-port", 
+            "text": "The SerialPort class is typically a representation of a single Serial Port, obtained via the SerialController.  There s a number of different properties     Property  Description      Name  This describes the name of the serial port, under Windows this will be usually be something like COM1 or COM5    IsOpen  This is a boolean value that indicates if the serial port has been opened    SerialSettings  This allows read / write access to the port configuration such as Baud rate, Handshaking etc    PinStates  This allows read / write access to pins such as CD, CTS, DSR, DTR, RTS etc    BufferSettings  This property represents the settings for the Buffer, this includes the Read / Write Buffer sizes, parity replace byte etc    SerialProperties  This reads associated properties of the Serial Port such as max baud rate etc    Uart  This property contains methods for reading and writing to the port, as well as flushing the buffers", 
+            "title": "Serial Port"
+        }, 
+        {
+            "location": "/Notes/Links/", 
+            "text": "Links\n\n\nGeneral\n\n\n\n\nhttps://github.com/Microsoft/referencesource/tree/master/System/sys/system/IO/ports\n\n\nhttps://www.nuget.org/packages?q=serial\npage=4\n\n\nhttps://github.com/dotnet/corefx/issues/984\n\n\nhttps://github.com/genielabs/serialport-lib-dotnet/\n\n\nhttp://serialportstream.codeplex.com/\n\n\n\n\nhttp://zachsaw.blogspot.co.uk/2010/07/serialport-ioexception-workaround-in-c.html\n\n\n\n\n\n\nhttp://www.sparxeng.com/blog/software/must-use-net-system-io-ports-serialport#comment-840\n\n\n\n\nhttp://antanas.veiverys.com/enabling-serialport-datareceived-event-in-mono/\n\n\nhttp://stackoverflow.com/questions/7393818/serialport-in-mono-in-linux-not-responding-to-datareceived-event\n\n\nhttp://stackoverflow.com/questions/14454766/what-is-the-proper-way-to-create-an-observable-which-reads-a-stream-to-the-end\n\n\n\n\nIOCTL\n\n\n\n\nhttp://stackoverflow.com/questions/10387603/p-invoke-ioctl-system-call\n\n\nhttp://stackoverflow.com/questions/1024270/using-linux-ioctl-with-mono\n\n\nhttps://static.lwn.net/images/pdf/LDD3/ch06.pdf", 
+            "title": "Links"
+        }, 
+        {
+            "location": "/Notes/Links/#links", 
+            "text": "", 
+            "title": "Links"
+        }, 
+        {
+            "location": "/Notes/Links/#general", 
+            "text": "https://github.com/Microsoft/referencesource/tree/master/System/sys/system/IO/ports  https://www.nuget.org/packages?q=serial page=4  https://github.com/dotnet/corefx/issues/984  https://github.com/genielabs/serialport-lib-dotnet/  http://serialportstream.codeplex.com/   http://zachsaw.blogspot.co.uk/2010/07/serialport-ioexception-workaround-in-c.html    http://www.sparxeng.com/blog/software/must-use-net-system-io-ports-serialport#comment-840   http://antanas.veiverys.com/enabling-serialport-datareceived-event-in-mono/  http://stackoverflow.com/questions/7393818/serialport-in-mono-in-linux-not-responding-to-datareceived-event  http://stackoverflow.com/questions/14454766/what-is-the-proper-way-to-create-an-observable-which-reads-a-stream-to-the-end", 
+            "title": "General"
+        }, 
+        {
+            "location": "/Notes/Links/#ioctl", 
+            "text": "http://stackoverflow.com/questions/10387603/p-invoke-ioctl-system-call  http://stackoverflow.com/questions/1024270/using-linux-ioctl-with-mono  https://static.lwn.net/images/pdf/LDD3/ch06.pdf", 
+            "title": "IOCTL"
+        }, 
+        {
+            "location": "/Notes/Todo/", 
+            "text": "Todo Notes\n\n\nGeneral\n\n\n\n\nConsider Gbd.IO.Serial.Compat library for supporting the old API\n\n\n\n\nOnce the lower level API is working consider looking into a Reactive Extensions layer on top for Rx / Tx of data\n\n\n\n\n\n\nCheck removal of serial port when usb lead is disconnected\n    We may be able to use info from the ManagementObjectSearcher / SerialInfo class\n\n\n\n\n\n\nCheck for Ring pin support, and additional speeds for the baud rate\n\n\n\n\nCheck / test the buffer code\n\n\n\n\nVagrant\n\n\n\n\nLook into using Vagrant to generate a VirtualBox VM Image for testing the linux implementation.\n\n\nLook into using Virtualbox\ns seamless mode and remote debugging with Visual Studio\n\n\n\n\nTesting\n\n\n\n\nCheck the output from XUnit Tests to console / Test Output window\n\n\nCode up all tests\n\n\n\n\nExamples\n\n\n\n\nCode up Examples, maybe using GtkSharp and ASP .Net Core Console / Web apps\n\n\n\n\nLogging\n\n\n\n\n\n\nIt looks like there\ns a currently an issue when using ITestOutputHelper when outputing logging from XUnit with core.\n    this seems to be more of a tooling issue with core instead of a XUnit issue\n    https://github.com/xunit/xunit/issues/608\n\n\n\n\n\n\nIssue with contentfiles and nuget / core projects\n    https://github.com/NuGet/Home/issues/2262\n    http://stackoverflow.com/questions/40469058/nuget-content-files-in-net-core-solution-not-getting-copied-when-installing-thr\n    Eventually switch across to liblog once we can include it via Nuget, for now just use Serilog directly\n\n\n\n\n\n\nDocumentation\n\n\n\n\nFinish up Docs", 
+            "title": "Todo"
+        }, 
+        {
+            "location": "/Notes/Todo/#todo-notes", 
+            "text": "", 
+            "title": "Todo Notes"
+        }, 
+        {
+            "location": "/Notes/Todo/#general", 
+            "text": "Consider Gbd.IO.Serial.Compat library for supporting the old API   Once the lower level API is working consider looking into a Reactive Extensions layer on top for Rx / Tx of data    Check removal of serial port when usb lead is disconnected\n    We may be able to use info from the ManagementObjectSearcher / SerialInfo class    Check for Ring pin support, and additional speeds for the baud rate   Check / test the buffer code", 
+            "title": "General"
+        }, 
+        {
+            "location": "/Notes/Todo/#vagrant", 
+            "text": "Look into using Vagrant to generate a VirtualBox VM Image for testing the linux implementation.  Look into using Virtualbox s seamless mode and remote debugging with Visual Studio", 
+            "title": "Vagrant"
+        }, 
+        {
+            "location": "/Notes/Todo/#testing", 
+            "text": "Check the output from XUnit Tests to console / Test Output window  Code up all tests", 
+            "title": "Testing"
+        }, 
+        {
+            "location": "/Notes/Todo/#examples", 
+            "text": "Code up Examples, maybe using GtkSharp and ASP .Net Core Console / Web apps", 
+            "title": "Examples"
+        }, 
+        {
+            "location": "/Notes/Todo/#logging", 
+            "text": "It looks like there s a currently an issue when using ITestOutputHelper when outputing logging from XUnit with core.\n    this seems to be more of a tooling issue with core instead of a XUnit issue\n    https://github.com/xunit/xunit/issues/608    Issue with contentfiles and nuget / core projects\n    https://github.com/NuGet/Home/issues/2262\n    http://stackoverflow.com/questions/40469058/nuget-content-files-in-net-core-solution-not-getting-copied-when-installing-thr\n    Eventually switch across to liblog once we can include it via Nuget, for now just use Serilog directly", 
+            "title": "Logging"
+        }, 
+        {
+            "location": "/Notes/Todo/#documentation", 
+            "text": "Finish up Docs", 
+            "title": "Documentation"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['parallel_5fport',['Parallel_Port',['../namespace_gbd_1_1_i_o_1_1_serial_1_1_win32_1_1_settings_1_1_serial_info_enums.html#a28b16ff7bc2fd67e499c0731b123c4d5abb69772e3456284938cb499ed479c434',1,'Gbd::IO::Serial::Win32::Settings::SerialInfoEnums']]],
+  ['parity',['Parity',['../namespace_gbd_1_1_i_o_1_1_serial_1_1_win32_1_1_settings_1_1_serial_info_enums.html#af25d4efd15503996797055ed8d78a3e2aa91d6e31a7e409defa6beb8f1311ef98',1,'Gbd::IO::Serial::Win32::Settings::SerialInfoEnums']]],
+  ['parity_5fcheck',['Parity_Check',['../namespace_gbd_1_1_i_o_1_1_serial_1_1_win32_1_1_settings_1_1_serial_info_enums.html#a66a7c1b5def142f45a0df2c284fcd286a971b649ed81c7d07947fef509971eaee',1,'Gbd.IO.Serial.Win32.Settings.SerialInfoEnums.Parity_Check()'],['../namespace_gbd_1_1_i_o_1_1_serial_1_1_win32_1_1_settings_1_1_serial_info_enums.html#af25d4efd15503996797055ed8d78a3e2a971b649ed81c7d07947fef509971eaee',1,'Gbd.IO.Serial.Win32.Settings.SerialInfoEnums.Parity_Check()']]],
+  ['parity_5feven',['Parity_Even',['../namespace_gbd_1_1_i_o_1_1_serial_1_1_win32_1_1_settings_1_1_serial_info_enums.html#a112442f3384c8d0cd509b49a5b099613a3335bac8b08c1108e194953df846a76e',1,'Gbd::IO::Serial::Win32::Settings::SerialInfoEnums']]],
+  ['parity_5fmark',['Parity_Mark',['../namespace_gbd_1_1_i_o_1_1_serial_1_1_win32_1_1_settings_1_1_serial_info_enums.html#a112442f3384c8d0cd509b49a5b099613ad557ef56891eb34557d625c32308a5a2',1,'Gbd::IO::Serial::Win32::Settings::SerialInfoEnums']]],
+  ['parity_5fnone',['Parity_None',['../namespace_gbd_1_1_i_o_1_1_serial_1_1_win32_1_1_settings_1_1_serial_info_enums.html#a112442f3384c8d0cd509b49a5b099613ad6c048eb47da00f4b0e26a3ff37d1a95',1,'Gbd::IO::Serial::Win32::Settings::SerialInfoEnums']]],
+  ['parity_5fodd',['Parity_Odd',['../namespace_gbd_1_1_i_o_1_1_serial_1_1_win32_1_1_settings_1_1_serial_info_enums.html#a112442f3384c8d0cd509b49a5b099613a7a28709328e0112c5b487e77ed70ba1f',1,'Gbd::IO::Serial::Win32::Settings::SerialInfoEnums']]],
+  ['parity_5fspace',['Parity_Space',['../namespace_gbd_1_1_i_o_1_1_serial_1_1_win32_1_1_settings_1_1_serial_info_enums.html#a112442f3384c8d0cd509b49a5b099613a7df389e992fe18ba5a1f3504ca61938d',1,'Gbd::IO::Serial::Win32::Settings::SerialInfoEnums']]]
+];
