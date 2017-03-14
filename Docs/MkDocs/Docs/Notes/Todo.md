@@ -39,3 +39,9 @@
 ## Documentation
 
   * Finish up Docs
+
+  * http://msdn.microsoft.com/en-us/library/system.io.ports.serialport(v=vs.110).aspx
+  * http://www.sparxeng.com/blog/software/must-use-net-system-io-ports-serialport
+
+  * http://blogs.msdn.com/b/jeffva/archive/2010/07/23/rx-on-the-server-part-1-of-n-asynchronous-system-io-stream-reading.aspx
+  * http://blogs.msdn.com/b/jeffva/archive/2010/08/30/rx-on-the-server-part-4-of-n-buffering-output-to-a-stream.aspx
