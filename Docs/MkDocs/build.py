@@ -8,7 +8,7 @@ class MkDocsBuild(object):
 
     # Class Init
     def __init__(self):
-        self.SRCDIR = "docs"
+        self.SRCDIR = "Docs"
         self.BUILDDIR = "site"
         self.DOXYDIR = "../Doxygen"
         self.DOXYBUILDDIR = "../Doxygen/html"
@@ -49,30 +49,24 @@ class MkDocsBuild(object):
         cmdopts = ["mkdocs", "build", "--clean"]
         self.run_cmd(cmdopts, self.MKDOCSDIR)
 
-        # Clean the doxygen dir
-        self.emptydir("Docs/doxygen")
-        if os.path.exists(os.path.abspath("Docs/doxygen")):
-            os.rmdir(os.path.abspath("Docs/doxygen"))
-
         # Re-create the doxygen templates
         print("Building Doxygen templates")
         cmdopts = ["python", "build.py", "template_mkdocs"]
         self.run_cmd(cmdopts, self.DOXYDIR)
+
+        # Clean the doxygen output dir
+        self.emptydir("Docs/doxygen")
+        if os.path.exists(os.path.abspath("Docs/doxygen")):
+            os.rmdir(os.path.abspath("Docs/doxygen"))
 
         # Run Doxygen
         print("Building Doxygen Files")
         cmdopts = ["python", "build.py", "build"]
         self.run_cmd(cmdopts, self.DOXYDIR)
 
-        # Copy the files over
-        print("Copying Doxygen files")
-        dest = os.path.join(self.SRCDIR, "doxygen")
-        shutil.copytree(self.DOXYBUILDDIR, dest)
-
     # Do the main build
     def build(self):
         self.clean()
-        self.build_doxygen()
         print("Building MkDocs Files")
         cmdopts = ["mkdocs", "build", "--clean"]
         self.run_cmd(cmdopts, self.MKDOCSDIR)
@@ -87,7 +81,6 @@ class MkDocsBuild(object):
         print ("Publish finished.")
 
     def serve(self):
-        self.build()
         print("Starting MkDocs Server http://127.0.0.1:8000")
         cmdopts = ["mkdocs", "serve"]
         self.run_cmd(cmdopts, self.MKDOCSDIR)

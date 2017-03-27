@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
     <DefineConstants>$(DefineConstants);LIBLOG_PORTABLE;LIBLOG_PUBLIC</DefineConstants>
   </PropertyGroup>
 
@@ -13,13 +13,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Libs\Gbd.IO.Serial\Gbd.IO.Serial.csproj" />
-    <ProjectReference Include="..\..\Libs\Gbd.IO.Serial.Win32\Gbd.IO.Serial.Win32.csproj" />
+    <ProjectReference Include="..\..\Libs\Gbd.IO.Serial.LinuxMono\Gbd.IO.Serial.LinuxMono.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
     <PackageReference Include="xunit" Version="2.2.0" />

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp1.1;net462</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Gbd.IO.Serial\Gbd.IO.Serial.csproj" />
+    <ProjectReference Include="..\..\Libs\Gbd.IO.Serial.Reactive\Gbd.IO.Serial.Reactive.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+    <ProjectReference Include="..\..\Libs\Gbd.IO.Serial.Win32\Gbd.IO.Serial.Win32.csproj" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
+    <ProjectReference Include="..\..\Libs\Gbd.IO.Serial.LinuxMono\Gbd.IO.Serial.LinuxMono.csproj" />
+  </ItemGroup>
+
+</Project>

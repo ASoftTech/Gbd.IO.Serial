@@ -11,7 +11,7 @@ class DoxygenBuild(object):
     # Class Init
     def __init__(self):
         self.DOXYGENBUILD = "C:/Program Files/doxygen/bin/doxygen.exe"
-        self.BUILDDIR = "html"
+        self.BUILDDIR = "../MkDocs/Docs/doxygen"
         self.DOXYDIR = "./"
 
     # Print Usage
@@ -34,7 +34,7 @@ class DoxygenBuild(object):
 
     # Clean the Build directory
     def clean(self):
-        self.emptydir("html")
+        self.emptydir("../MkDocs/Docs/doxygen")
         print ("Clean finished")
 
     # Run a command
@@ -49,16 +49,17 @@ class DoxygenBuild(object):
 
     # Do the main build of doxygen html
     def build(self):
+        self.clean()
         cmdopts = []
         cmdopts.append(self.DOXYGENBUILD)
         cmdopts.append('Doxyfile')
         self.run_cmd(cmdopts, self.DOXYDIR)
         # Copy custom search.css across
         searchcss_src = os.path.abspath(os.path.join(self.DOXYDIR, "theme/search.js"))
-        searchcss_dest = os.path.abspath(os.path.join(self.DOXYDIR, "html/search/search.js"))
+        searchcss_dest = os.path.abspath(os.path.join(self.DOXYDIR, self.BUILDDIR, "search/search.js"))
         copyfile(searchcss_src, searchcss_dest)
         searchcss_src = os.path.abspath(os.path.join(self.DOXYDIR, "theme/doxygen.css"))
-        searchcss_dest = os.path.abspath(os.path.join(self.DOXYDIR, "html/doxygen.css"))
+        searchcss_dest = os.path.abspath(os.path.join(self.DOXYDIR, self.BUILDDIR, "doxygen.css"))
         copyfile(searchcss_src, searchcss_dest)
         print ("Build finished. The HTML pages are in " + self.BUILDDIR)
 

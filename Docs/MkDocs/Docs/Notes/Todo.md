@@ -27,6 +27,9 @@
 
 ## Logging
 
+  * try liblog reference with new csproj layout
+  * try using ITestOutputHelper with vs 2017
+
   * It looks like there's a currently an issue when using ITestOutputHelper when outputing logging from XUnit with core.
     this seems to be more of a tooling issue with core instead of a XUnit issue
     https://github.com/xunit/xunit/issues/608

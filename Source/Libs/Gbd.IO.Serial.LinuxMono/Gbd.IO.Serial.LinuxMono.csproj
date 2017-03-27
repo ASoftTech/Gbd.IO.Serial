@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.5</TargetFramework>
+    <AssemblyName>Gbd.IO.Serial.LinuxMono</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gbd.IO.Serial\Gbd.IO.Serial.csproj" />
+  </ItemGroup>
+
+</Project>
