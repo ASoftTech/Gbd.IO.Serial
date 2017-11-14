@@ -1,26 +1,28 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{3D9A03F1-9678-416D-A6FB-43821AD5C6BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gbd.IO.Serial", "Libs\Gbd.IO.Serial\Gbd.IO.Serial.csproj", "{64AA7D7E-9AAE-4EED-9270-66DFB023D70B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gbd.IO.Serial", "Libs\Gbd.IO.Serial\Gbd.IO.Serial.csproj", "{64AA7D7E-9AAE-4EED-9270-66DFB023D70B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gbd.IO.Serial.Win32", "Libs\Gbd.IO.Serial.Win32\Gbd.IO.Serial.Win32.csproj", "{4C89C943-F86E-4331-9671-8CFE83BFEB81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gbd.IO.Serial.Win32", "Libs\Gbd.IO.Serial.Win32\Gbd.IO.Serial.Win32.csproj", "{4C89C943-F86E-4331-9671-8CFE83BFEB81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gbd.IO.Serial.LinuxMono", "Libs\Gbd.IO.Serial.LinuxMono\Gbd.IO.Serial.LinuxMono.csproj", "{740B9624-E493-43AF-AF4F-A8C022CC6F1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gbd.IO.Serial.LinuxMono", "Libs\Gbd.IO.Serial.LinuxMono\Gbd.IO.Serial.LinuxMono.csproj", "{740B9624-E493-43AF-AF4F-A8C022CC6F1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gbd.IO.Serial.Reactive", "Libs\Gbd.IO.Serial.Reactive\Gbd.IO.Serial.Reactive.csproj", "{895ED5C3-8313-47CD-B2E3-BC12E723BED9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gbd.IO.Serial.Reactive", "Libs\Gbd.IO.Serial.Reactive\Gbd.IO.Serial.Reactive.csproj", "{895ED5C3-8313-47CD-B2E3-BC12E723BED9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{ABC2658B-C2F8-427D-889E-2667DBA2B450}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B6385288-B29D-48D4-BFCF-FDC432D52A36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleCoreApp1", "Examples\ExampleCoreApp1\ExampleCoreApp1.csproj", "{E25A5280-BC91-4F8C-9691-31EB328A5106}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleCoreApp1", "Examples\ExampleCoreApp1\ExampleCoreApp1.csproj", "{E25A5280-BC91-4F8C-9691-31EB328A5106}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gbd.IO.Serial.LinuxMono.Tests", "Tests\Gbd.IO.Serial.LinuxMono.Tests\Gbd.IO.Serial.LinuxMono.Tests.csproj", "{ECF27220-BD2B-4B46-AA44-2644AE244AE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gbd.IO.Serial.LinuxMono.Tests", "Tests\Gbd.IO.Serial.LinuxMono.Tests\Gbd.IO.Serial.LinuxMono.Tests.csproj", "{ECF27220-BD2B-4B46-AA44-2644AE244AE1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gbd.IO.Serial.Win32.Tests", "Tests\Gbd.IO.Serial.Win32.Tests\Gbd.IO.Serial.Win32.Tests.csproj", "{B2707AEE-A292-4826-8158-AB11C95F3389}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gbd.IO.Serial.Win32Core", "Libs\Gbd.IO.Serial.Win32Core\Gbd.IO.Serial.Win32Core.csproj", "{22EBF040-2D46-491A-8DB6-A8A2316738F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{B2707AEE-A292-4826-8158-AB11C95F3389}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2707AEE-A292-4826-8158-AB11C95F3389}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2707AEE-A292-4826-8158-AB11C95F3389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22EBF040-2D46-491A-8DB6-A8A2316738F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22EBF040-2D46-491A-8DB6-A8A2316738F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22EBF040-2D46-491A-8DB6-A8A2316738F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22EBF040-2D46-491A-8DB6-A8A2316738F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,5 +74,9 @@ Global
 		{E25A5280-BC91-4F8C-9691-31EB328A5106} = {ABC2658B-C2F8-427D-889E-2667DBA2B450}
 		{ECF27220-BD2B-4B46-AA44-2644AE244AE1} = {B6385288-B29D-48D4-BFCF-FDC432D52A36}
 		{B2707AEE-A292-4826-8158-AB11C95F3389} = {B6385288-B29D-48D4-BFCF-FDC432D52A36}
+		{22EBF040-2D46-491A-8DB6-A8A2316738F5} = {3D9A03F1-9678-416D-A6FB-43821AD5C6BC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC073396-A2E7-4613-B5B4-9088D6BF35A2}
 	EndGlobalSection
 EndGlobal
